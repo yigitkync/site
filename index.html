@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yiğit KOYUNCU | Portfolyo</title>
+  <meta name="description" content="Yiğit KOYUNCU - Uçak Bakım Alanı Öğrencisi, Geliştirici & Maker.">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Modern Clean Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #121316;
+      --bg-card: #18191f;
+      --bg-card-hover: #1f212a;
+      --primary: #2563EB;
+      --primary-light: #3b82f6;
+      --primary-glow: rgba(37, 99, 235, 0.25);
+      --secondary: #F97316;
+      --secondary-glow: rgba(249, 115, 22, 0.25);
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(37, 99, 235, 0.45);
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+    }
+
+    /* THEMATIC HIGH-TECH BACKGROUND */
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 65%, rgba(249, 115, 22, 0.09) 0%, transparent 45%),
+        radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 36px 36px;
+      background-attachment: fixed;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 19, 22, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.3px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #000000;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* Clean Switcher Pill */
+    .lang-pill {
+      display: inline-flex;
+      background: #171820;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 3px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-dim);
+      font-family: var(--font-main);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 6.5rem 0 5rem;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-name {
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.2px;
+    }
+
+    .hero-bio {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 580px;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      border: 1px solid transparent;
+      box-shadow: 0 4px 18px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--primary-glow);
+    }
+
+    .btn-secondary {
+      background: #1a1b22;
+      color: #e5e7eb;
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Right Visual Card */
+    .hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-card-header {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-card-role {
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-card-role-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #60a5fa;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-role-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-item {
+      background: #14151a;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--secondary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Section Global Styles */
+    section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section-header {
+      margin-bottom: 2.75rem;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      color: #ffffff;
+    }
+
+    /* ALTTAN ÜSTE DOĞRU EĞİTİM YOLCULUK ŞEMASI (VERTICAL ROADMAP) */
+    .journey-roadmap {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+
+    /* Upward Progress Spine */
+    .journey-spine {
+      position: absolute;
+      top: 20px;
+      bottom: 20px;
+      left: 42px;
+      width: 3px;
+      background: linear-gradient(180deg, var(--primary) 0%, rgba(37, 99, 235, 0.5) 40%, rgba(249, 115, 22, 0.4) 80%, rgba(255, 255, 255, 0.1) 100%);
+      border-radius: 3px;
+    }
+
+    .journey-step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      position: relative;
+      margin-bottom: 2rem;
+      transition: all 0.25s ease;
+    }
+
+    .journey-step-item:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Milestone Indicator Circle */
+    .journey-node {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #161820;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 2;
+      color: var(--text-dim);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .journey-step-item:hover .journey-node {
+      border-color: var(--primary);
+      color: #ffffff;
+      transform: scale(1.1);
+      box-shadow: 0 0 16px var(--primary-glow);
+    }
+
+    .journey-node.current-peak {
+      border-color: var(--primary);
+      background: rgba(37, 99, 235, 0.2);
+      color: #60a5fa;
+      box-shadow: 0 0 20px var(--primary-glow);
+      animation: pulse-node 2s infinite;
+    }
+
+    @keyframes pulse-node {
+
+      0%,
+      100% {
+        box-shadow: 0 0 10px var(--primary-glow);
+      }
+
+      50% {
+        box-shadow: 0 0 25px rgba(37, 99, 235, 0.6);
+      }
+    }
+
+    /* Roadmap Card */
+    .journey-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      flex-grow: 1;
+      transition: all 0.25s ease;
+    }
+
+    .journey-step-item:hover .journey-card {
+      border-color: var(--border-hover);
+      transform: translateX(4px);
+    }
+
+    .journey-card.active-peak-card {
+      border-color: rgba(37, 99, 235, 0.5);
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, var(--bg-card) 100%);
+    }
+
+    .journey-tag-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+    }
+
+    .journey-step-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .journey-step-badge.ongoing {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .journey-step-badge.completed {
+      background: #20222a;
+      color: var(--text-dim);
+    }
+
+    .journey-school-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.4;
+      margin-bottom: 0.35rem;
+    }
+
+    .journey-dept-title {
+      font-size: 0.92rem;
+      color: #60a5fa;
+      font-weight: 600;
+    }
+
+    /* PROJECTS SECTION - Custom Robotics Schematic Visuals, Titles Only (NO index badges) */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card-clean {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .project-card-clean:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--secondary);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--secondary-glow);
+    }
+
+    /* Custom Project Schematic Illustration Container */
+    .project-schematic-banner {
+      width: 100%;
+      height: 120px;
+      background: linear-gradient(135deg, #13141a 0%, #1c1d26 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-schematic-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+      background-size: 16px 16px;
+      pointer-events: none;
+    }
+
+    .schematic-svg {
+      width: 54px;
+      height: 54px;
+      color: var(--secondary);
+      filter: drop-shadow(0 0 10px var(--secondary-glow));
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+
+    .project-card-clean:hover .schematic-svg {
+      transform: scale(1.15);
+      color: #fb923c;
+    }
+
+    .project-title-area {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .project-title-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.45;
+    }
+
+    /* Tools Section */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tool-group-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all 0.2s ease;
+    }
+
+    .tool-group-card:hover {
+      border-color: var(--primary);
+    }
+
+    .tool-group-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tool-group-title i {
+      color: var(--primary-light);
+    }
+
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tool-tag {
+      background: #14151a;
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      color: #e5e7eb;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .tool-tag:hover {
+      border-color: var(--secondary);
+      color: #fff;
+    }
+
+    /* CERTIFICATES SECTION: Strict 16:10 Photo Placeholder, NO corner badges, NO url string */
+    .cert-filter-wrap {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .cert-tab {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .cert-tab.active,
+    .cert-tab:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+
+    .cert-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 16:10 Photo Container */
+    .cert-visual-16-10 {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      position: relative;
+      background: #15161c;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cert-img-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .cert-card:hover .cert-img-placeholder {
+      transform: scale(1.05);
+    }
+
+    /* Clickable Title Bottom */
+    .cert-title-bottom {
+      padding: 1.4rem;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .cert-link-title {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.02rem;
+      font-weight: 700;
+      line-height: 1.45;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      gap: 12px;
+      transition: color 0.2s ease;
+    }
+
+    .cert-link-title:hover {
+      color: var(--primary-light);
+    }
+
+    .cert-link-arrow {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .cert-link-title:hover .cert-link-arrow {
+      color: var(--secondary);
+      transform: translate(2px, -2px);
+    }
+
+    /* Load More / Pagination Area */
+    .cert-load-more-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 2.5rem;
+    }
+
+    .btn-load-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-load-more:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--primary-glow);
+    }
+
+    .btn-load-more i {
+      transition: transform 0.25s ease;
+    }
+
+    .btn-load-more:hover i {
+      transform: translateY(3px);
+    }
+
+    /* Contact Section - Single Line Social Row */
+    .contact-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #14151a;
+      border: 1px solid var(--border);
+      padding: 12px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 1.5rem 0 2rem;
+      transition: all 0.2s ease;
+    }
+
+    .contact-email:hover {
+      border-color: var(--primary);
+      color: #93c5fd;
+      transform: translateY(-2px);
+    }
+
+    /* Single Line Horizontal Social Links Bar */
+    .social-single-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 1rem auto 0;
+      max-width: 950px;
+    }
+
+    .social-row-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #14151a;
+      border: 1px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .social-row-link i {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      transition: color 0.2s;
+    }
+
+    .social-row-link:hover {
+      border-color: var(--secondary);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px var(--secondary-glow);
+    }
+
+    .social-row-link:hover i {
+      color: var(--secondary);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.2rem 0;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-name {
+        font-size: 2.75rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .journey-spine {
+        left: 24px;
+      }
+
+      .journey-node {
+        width: 38px;
+        height: 38px;
+        font-size: 0.85rem;
+      }
+
+      .journey-step-item {
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="brand-mark">
+          <img src="assets/images/logo.png" alt="Yiğit KOYUNCU Logo">
+        </div>
+        <span>Yiğit KOYUNCU</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about" data-i18n="nav_about">Hakkımda</a></li>
+          <li><a href="#education" data-i18n="nav_education">Eğitim</a></li>
+          <li><a href="#projects" data-i18n="nav_projects">Projeler</a></li>
+          <li><a href="#tools" data-i18n="nav_tools">Araçlar</a></li>
+          <li><a href="#certificates" data-i18n="nav_certificates">Sertifikalar</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">İletişim</a></li>
+        </ul>
+      </nav>
+
+      <!-- Language Switcher Pill Button -->
+      <div class="lang-pill">
+        <button id="btn-tr" class="lang-btn active" onclick="switchLanguage('tr')">TR</button>
+        <button id="btn-en" class="lang-btn" onclick="switchLanguage('en')">ENG</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (Removed top role badge as requested) -->
+  <main>
+    <section class="hero-section" id="about">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Hero Content -->
+          <div>
+            <h1 class="hero-name">Yiğit KOYUNCU</h1>
+
+            <div class="hero-title" data-i18n="hero_title">
+              Geliştirici & Maker | Lise Öğrencisi
+            </div>
+
+            <p class="hero-bio" data-i18n="hero_bio">
+              Eskişehir Sabiha Gökçen Mesleki ve Teknik Anadolu Lisesi Uçak Bakım Alanı öğrencisiyim. Havacılık, yazılım
+              ve robotik alanlarında ürettiğim projelerle kendimi geliştiriyorum.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fa-solid fa-microchip"></i>
+                <span data-i18n="btn_projects">Projelerimi İncele</span>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span data-i18n="btn_contact">İletişime Geç</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Hero Overview Card -->
+          <div class="hero-card">
+            <div class="hero-card-header" data-i18n="card_header">GENEL BAKIŞ</div>
+
+            <div class="hero-card-role">
+              <div class="hero-card-role-title" data-i18n="card_role_label">Aktif Görev</div>
+              <div class="hero-card-role-name">
+                <i class="fa-solid fa-crosshairs" style="color: var(--secondary);"></i>
+                <span data-i18n="card_role_val">SGMTAL Drone Takımı Yardımcı Pilot</span>
+              </div>
+            </div>
+
+            <div class="hero-stats-row">
+              <div class="stat-item">
+                <div class="stat-number">23</div>
+                <div class="stat-label" data-i18n="stat_certs">Sertifika</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label" data-i18n="stat_projects">Robotik Projesi</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section: ALTTAN ÜSTE DOĞRU YOLCULUK ŞEMASI (BOTTOM-TO-TOP ROADMAP) -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="edu_title">Eğitim Hayatım</h2>
+        </div>
+
+        <div class="journey-roadmap">
+          <div class="journey-spine"></div>
+
+          <!-- TOP / CURRENT LEVEL: Lise (Uçak Bakım) -->
+          <div class="journey-step-item">
+            <div class="journey-node current-peak">
+              <i class="fa-solid fa-plane-departure"></i>
+            </div>
+            <div class="journey-card active-peak-card">
+              <div class="journey-tag-row">
+                <span class="journey-step-badge ongoing" data-i18n="status_ongoing">Devam Ediyor</span>
+                <span style="font-family: var(--font-mono); font-size: 0.78rem; color: #60a5fa;"
+                  data-i18n="step_current">▲ Güncel Zirve</span>
+              </div>
+              <h3 class="journey-school-name" data-i18n="sch_1">Eskişehir Sabiha Gökçen Mesleki ve Teknik Anadolu Lisesi
+              </h3>
+              <p class="journey-dept-title" data-i18n="dept_1">Uçak Bakım Alanı</p>
+            </div>
+          </div>
+
+          <!-- LEVEL 3: Deneyap -->
+          <div class="journey-step-item">
+            <div class="journey-node">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="journey-card">
+              <div class="journey-tag-row">
+                <span class="journey-step-badge completed" data-i18n="status_graduated">Mezun</span>
+                <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim);"
+                  data-i18n="step_3">3. Aşama</span>
+              </div>
+              <h3 class="journey-school-name" data-i18n="sch_2">Deneyap Teknoloji Atölyeleri</h3>
+              <p class="journey-dept-title" style="color: var(--text-dim);" data-i18n="dept_2">Teknoloji Eğitimi</p>
+            </div>
+          </div>
+
+          <!-- LEVEL 2: Ortaokul -->
+          <div class="journey-step-item">
+            <div class="journey-node">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="journey-card">
+              <div class="journey-tag-row">
+                <span class="journey-step-badge completed" data-i18n="status_graduated">Mezun</span>
+                <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim);"
+                  data-i18n="step_2">2. Aşama</span>
+              </div>
+              <h3 class="journey-school-name" data-i18n="sch_3">Bolu Akşemseddin Hafız İmam Hatip Ortaokulu</h3>
+              <p class="journey-dept-title" style="color: var(--text-dim);" data-i18n="dept_3">Ortaokul</p>
+            </div>
+          </div>
+
+          <!-- BOTTOM / LEVEL 1: İlkokul (Journey Start) -->
+          <div class="journey-step-item">
+            <div class="journey-node">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <div class="journey-card">
+              <div class="journey-tag-row">
+                <span class="journey-step-badge completed" data-i18n="status_graduated">Mezun</span>
+                <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim);"
+                  data-i18n="step_1">● Başlangıç</span>
+              </div>
+              <h3 class="journey-school-name" data-i18n="sch_4">Bolu Gazipaşa İlkokulu</h3>
+              <p class="journey-dept-title" style="color: var(--text-dim);" data-i18n="dept_4">İlkokul</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section (NO SUMO, TRACK, RADAR, MAZE text; only clean titles) -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="proj_title">Projelerim</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Sumo Robot -->
+          <div class="project-card-clean">
+            <div class="project-schematic-banner">
+              <svg class="schematic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                <circle cx="12" cy="5" r="2"></circle>
+                <path d="M12 7v4"></path>
+                <line x1="8" y1="16" x2="8" y2="16"></line>
+                <line x1="16" y1="16" x2="16" y2="16"></line>
+                <path d="M1 16h2"></path>
+                <path d="M21 16h2"></path>
+              </svg>
+            </div>
+            <div class="project-title-area">
+              <h3 class="project-title-text" data-i18n="p1">Mobil Kontrollü Sumo Robot</h3>
+            </div>
+          </div>
+
+          <!-- Project 2: Line Following Robot -->
+          <div class="project-card-clean">
+            <div class="project-schematic-banner">
+              <svg class="schematic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19c4-8 8-8 16 0"></path>
+                <circle cx="12" cy="7" r="3"></circle>
+                <path d="M12 10v4"></path>
+                <path d="M8 21h8"></path>
+              </svg>
+            </div>
+            <div class="project-title-area">
+              <h3 class="project-title-text" data-i18n="p2">Çizgi İzleyen Robot</h3>
+            </div>
+          </div>
+
+          <!-- Project 3: Obstacle Avoiding Robot -->
+          <div class="project-card-clean">
+            <div class="project-schematic-banner">
+              <svg class="schematic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10"></path>
+                <path d="M12 6a6 6 0 1 0 6 6"></path>
+                <circle cx="12" cy="12" r="2"></circle>
+                <path d="M12 2v10l7-7"></path>
+              </svg>
+            </div>
+            <div class="project-title-area">
+              <h3 class="project-title-text" data-i18n="p3">Engelden Kaçan Robot</h3>
+            </div>
+          </div>
+
+          <!-- Project 4: Maze Solving Robot -->
+          <div class="project-card-clean">
+            <div class="project-schematic-banner">
+              <svg class="schematic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <path d="M7 3v6h4"></path>
+                <path d="M17 3v10h-4"></path>
+                <path d="M7 13v8"></path>
+                <path d="M13 17h8"></path>
+              </svg>
+            </div>
+            <div class="project-title-area">
+              <h3 class="project-title-text" data-i18n="p4">Labirent Çözen Robot</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="tools_title">Kullandığım Araçlar</h2>
+        </div>
+
+        <div class="tools-grid">
+          <!-- Software -->
+          <div class="tool-group-card">
+            <h3 class="tool-group-title">
+              <i class="fa-solid fa-code"></i>
+              <span data-i18n="cat_soft">Yazılım & Web Dilleri</span>
+            </h3>
+            <div class="tool-tags">
+              <span class="tool-tag">C / C++</span>
+              <span class="tool-tag">Python</span>
+              <span class="tool-tag">Dart</span>
+              <span class="tool-tag">HTML5 & CSS3</span>
+              <span class="tool-tag">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Embedded -->
+          <div class="tool-group-card">
+            <h3 class="tool-group-title">
+              <i class="fa-solid fa-microchip" style="color: var(--secondary);"></i>
+              <span data-i18n="cat_emb">Gömülü Sistemler & Donanım</span>
+            </h3>
+            <div class="tool-tags">
+              <span class="tool-tag" data-i18n="t_ard">Arduino & Mikrodenetleyiciler</span>
+              <span class="tool-tag" data-i18n="t_sens">Sensör Sistemleri</span>
+              <span class="tool-tag" data-i18n="t_mot">Motor & Sürücü Sistemleri</span>
+              <span class="tool-tag" data-i18n="t_circ">Elektronik Devre Kurulumu</span>
+            </div>
+          </div>
+
+          <!-- Mobile -->
+          <div class="tool-group-card">
+            <h3 class="tool-group-title">
+              <i class="fa-solid fa-mobile-screen"></i>
+              <span data-i18n="cat_mob">Mobil Uygulama & Blok Kodlama</span>
+            </h3>
+            <div class="tool-tags">
+              <span class="tool-tag">Flutter</span>
+              <span class="tool-tag">MIT App Inventor</span>
+              <span class="tool-tag">Mobil UI/UX</span>
+            </div>
+          </div>
+
+          <!-- Design -->
+          <div class="tool-group-card">
+            <h3 class="tool-group-title">
+              <i class="fa-solid fa-cube" style="color: #10b981;"></i>
+              <span data-i18n="cat_des">Tasarım & Üretim</span>
+            </h3>
+            <div class="tool-tags">
+              <span class="tool-tag" data-i18n="t_cad">3D Modelleme (CAD)</span>
+              <span class="tool-tag" data-i18n="t_cnc">CNC & Lazer Kesim</span>
+              <span class="tool-tag" data-i18n="t_proto">Fiziksel Prototipleme</span>
+            </div>
+          </div>
+
+          <!-- Systems -->
+          <div class="tool-group-card">
+            <h3 class="tool-group-title">
+              <i class="fa-solid fa-terminal" style="color: #a855f7;"></i>
+              <span data-i18n="cat_sys">Sistem & Araçlar</span>
+            </h3>
+            <div class="tool-tags">
+              <span class="tool-tag" data-i18n="t_lin">Linux Terminali</span>
+              <span class="tool-tag">Git & GitHub / GitLab</span>
+              <span class="tool-tag">Arduino IDE</span>
+              <span class="tool-tag">Antigravity IDE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section (16:10 Photo Placeholder, Clickable Title Below) -->
+    <section id="certificates">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="cert_title">Sertifikalarım</h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="cert-filter-wrap">
+          <button class="cert-tab active" onclick="filterCertificates('all', this)" data-i18n="tab_all">Tümü
+            (23)</button>
+          <button class="cert-tab" onclick="filterCertificates('deneyap', this)" data-i18n="tab_deneyap">Deneyap
+            (12)</button>
+          <button class="cert-tab" onclick="filterCertificates('content', this)" data-i18n="tab_content">İçerik
+            Üreticiliği (9)</button>
+          <button class="cert-tab" onclick="filterCertificates('participation', this)"
+            data-i18n="tab_participation">Katılım (2)</button>
+        </div>
+
+        <!-- Clean Grid -->
+        <div class="certs-grid" id="certificates-container">
+          <!-- Dynamically Rendered with 16:10 Photo Placeholder -->
+        </div>
+
+        <!-- Load More (Pagination) Button -->
+        <div class="cert-load-more-wrap" id="cert-load-more-wrap" style="display: none;">
+          <button class="btn-load-more" onclick="loadMoreCertificates()" id="btn-load-more">
+            <span data-i18n="btn_load_more">Daha Fazla Göster</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section - Single Line Social Row -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-container">
+          <h2 class="contact-title" data-i18n="contact_title">İletişim</h2>
+
+          <!-- Email -->
+          <div>
+            <a href="mailto:info@yigitkoyuncu.com" class="contact-email">
+              <i class="fa-solid fa-envelope" style="color: var(--secondary);"></i>
+              <span>info@yigitkoyuncu.com</span>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.85rem; color: var(--text-dim);"></i>
+            </a>
+          </div>
+
+          <!-- Single Horizontal Row of Social Links -->
+          <div class="social-single-row">
+            <a href="https://www.instagram.com/yigitk0yuncu?hvrq=OHo2OGR3eXB6Zm9x" target="_blank" class="social-row-link">
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/in/yigitkoyuncu" target="_blank" class="social-row-link">
+              <i class="fa-brands fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/yigitkync" target="_blank" class="social-row-link">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://x.com/yigitkoyuncu14" target="_blank" class="social-row-link">
+              <i class="fa-brands fa-x-twitter"></i>
+              <span>X</span>
+            </a>
+            <a href="https://youtube.com/@yigitkoyuncu14?si=iEGPQJj5uRjcUppG" target="_blank" class="social-row-link">
+              <i class="fa-brands fa-youtube"></i>
+              <span>YouTube</span>
+            </a>
+            <a href="https://wa.me/yigitkync14?s=t" target="_blank" class="social-row-link">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://nsosyal.com/yigitkync14" target="_blank" class="social-row-link">
+              <i class="fa-solid fa-share-nodes"></i>
+              <span>Nsosyal</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Yiğit KOYUNCU. <span data-i18n="footer_rights">Tüm hakları saklıdır.</span></p>
+    </div>
+  </footer>
+
+  <!-- Script: Translations & 16:10 Photo Placeholder Certificate Cards -->
+  <script>
+    // Placeholder Donkey Image (Can be easily replaced by your own certificate images)
+    // const DONKEY_PLACEHOLDER_IMG = "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=640&h=400&q=80"; // Image placeholder removed; each certificate can define its own img property
+
+    const certsData = [
+      // 1. Deneyap (12)
+      {
+        cat: 'deneyap',
+        titleTr: 'Deneyap Teknoloji Atölyeleri Mezuniyet Diploması',
+        titleEn: 'Deneyap Technology Workshops Graduation Diploma',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/60431049561863/',
+        img: 'assets/images/media_1795110386141_96a9402f.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'Tasarım ve Üretim Sertifikası',
+        titleEn: 'Design and Production Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/83493316825855/',
+        img: 'assets/images/media_1795110386159_a9db5d34.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'Robotik ve Kodlama Sertifikası',
+        titleEn: 'Robotics and Coding Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/65822701215768/',
+        img: 'assets/images/media_1795110386142_0aa3fe3b.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'Elektronik Programlama ve Nesnelerin İnterneti (IoT) Sertifikası',
+        titleEn: 'Electronic Programming and Internet of Things (IoT) Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/36096418704416/',
+        img: 'assets/images/media_1795110385987_dd6d82bf.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'Yazılım Teknolojileri Sertifikası',
+        titleEn: 'Software Technologies Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/59093462545061/',
+        img: 'assets/images/media_1795110386135_7befdfac.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'Yapay Zeka Sertifikası',
+        titleEn: 'Artificial Intelligence Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/57309059392534/',
+        img: 'assets/images/media_1795110386117_6ff1fc32.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'Siber Güvenlik Sertifikası',
+        titleEn: 'Cybersecurity Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/02142398028472/',
+        img: 'assets/images/media_1795110386171_9b385bd4.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'Havacılık ve Uzay Teknolojileri Sertifikası',
+        titleEn: 'Aviation and Space Technologies Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/79127469366111/',
+        img: 'assets/images/media_1795110386147_e2ecc061.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'Mobil Uygulama Geliştirme Sertifikası',
+        titleEn: 'Mobile Application Development Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/59751036108982/',
+        img: 'assets/images/media_1795110386135_859c963b.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'Nanoteknoloji ve Malzeme Bilimi Sertifikası',
+        titleEn: 'Nanotechnology and Materials Science Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/58884284666744/',
+        img: 'assets/images/media_1795110386129_97dece2f.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'Enerji Teknolojileri Sertifikası',
+        titleEn: 'Energy Technologies Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/59791156324259/',
+        img: 'assets/images/media_1795110386137_7f40e2f9.jpg'
+      },
+      {
+        cat: 'deneyap',
+        titleTr: 'İleri Robotik Sertifikası',
+        titleEn: 'Advanced Robotics Certificate',
+        url: 'https://drdogrulama.sanayi.gov.tr/tr/verify/98388205128428/',
+        img: 'https://drdepo.sanayi.gov.tr/verified-bucket/cert/98388205128428.png'
+      },
+
+      // 2. İçerik Üreticiliği (9)
+      {
+        cat: 'content',
+        titleTr: 'Sosyal Medya İçerik Üreticiliği Sertifikası',
+        titleEn: 'Social Media Content Creation Certificate',
+        url: 'https://www.btkakademi.gov.tr/portal/c/b78be95a-1876-41bf-82c8-c759cfb33f89',
+        img: 'assets/images/media_1795112264338_91a61dee.jpg'
+      },
+      {
+        cat: 'content',
+        titleTr: 'Sosyal Medyada Yapay Zekâ ile Dijital Pazarlama Sertifikası',
+        titleEn: 'Digital Marketing with Artificial Intelligence on Social Media Certificate',
+        url: 'https://www.btkakademi.gov.tr/portal/c/bbf9432f-bb2a-4b75-9634-738b659a94f2',
+        img: 'assets/images/media_1795112264379_08e70ba9.jpg'
+      },
+      {
+        cat: 'content',
+        titleTr: 'Sosyal Medya Etkileyicilerinin Hukuki Sorumluluğu Sertifikası',
+        titleEn: 'Legal Responsibility of Social Media Influencers Certificate',
+        url: 'https://www.btkakademi.gov.tr/portal/c/459771c9-bd3d-4ab4-a335-01c4850bc47f',
+        img: 'assets/images/media_1795112264342_2636cb91.jpg'
+      },
+      {
+        cat: 'content',
+        titleTr: 'Sosyal Medyada Marka İletişimi ve İş Birlikleri Sertifikası',
+        titleEn: 'Brand Communication and Collaborations on Social Media Certificate',
+        url: 'https://www.btkakademi.gov.tr/portal/c/e9438a7f-c733-4510-83df-f74f2c8bf36f',
+        img: 'assets/images/media_1795112264369_070323bf.jpg'
+      },
+      {
+        cat: 'content',
+        titleTr: 'Sosyal Medya İçerik Üretimi (Hedef Kitle Analizi ve Stratejik İletişim) Sertifikası',
+        titleEn: 'Social Media Content Production (Target Audience Analysis and Strategic Communication) Certificate',
+        url: 'https://www.btkakademi.gov.tr/portal/c/a4e76cbd-bdf5-4083-8a0f-e0c8add2ceb6',
+        img: 'assets/images/media_1795112264352_623a6ec9.jpg'
+      },
+      {
+        cat: 'content',
+        titleTr: 'Sosyal Medya Reklamcılığı ve Performans Analitiği Sertifikası',
+        titleEn: 'Social Media Advertising and Performance Analytics Certificate',
+        url: 'https://www.btkakademi.gov.tr/portal/c/2588a72f-921c-489f-978d-5f4e4a5edc52',
+        img: 'assets/images/media_1795112264352_102995c9.jpg'
+      },
+      {
+        cat: 'content',
+        titleTr: 'Sosyal Medyada Tasarım Temelli İçerik Üretimi Sertifikası',
+        titleEn: 'Design-Based Content Production on Social Media Certificate',
+        url: 'https://www.btkakademi.gov.tr/portal/c/3d27e9aa-8e5b-4b1d-9ac2-b2ebab6131ee',
+        img: 'assets/images/media_1795112264369_6dbb63fb.jpg'
+      },
+      {
+        cat: 'content',
+        titleTr: 'Sosyal Medya ve İnternet Muhabirliği Sertifikası',
+        titleEn: 'Social Media and Internet Journalism Certificate',
+        url: 'https://www.btkakademi.gov.tr/portal/c/7801bec5-85df-4d27-bc6a-c303d00f38f5',
+        img: 'assets/images/media_1795112264361_7bddb958.jpg'
+      },
+      {
+        cat: 'content',
+        titleTr: 'Sosyal Medyada İçerik Üretim Süreci, Hikâye Anlatıcılığı ve Görsel Dil Sertifikası',
+        titleEn: 'Content Production Process, Storytelling, and Visual Language on Social Media Certificate',
+        url: 'https://www.btkakademi.gov.tr/portal/c/5fa744c0-3b55-4cd3-b4d8-75bff1ea0282',
+        img: 'assets/images/media_1795112264369_7770a249.jpg'
+      },
+
+      // 3. Katılım (2)
+      {
+        cat: 'participation',
+        titleTr: 'Deneyap Takımlar Dönemi Katılım Sertifikası',
+        titleEn: 'Deneyap Teams Period Participation Certificate',
+        url: 'https://yigitkoyuncu.com/deneyap-takim-sertifikasi',
+        img: 'assets/images/media_1795112264120_cca3c302.png'
+      },
+      {
+        cat: 'participation',
+        titleTr: "CyberFirst'25 Siber Güvenlik Eğitim Kampı Katılım Sertifikası",
+        titleEn: "CyberFirst'25 Cybersecurity Training Camp Participation Certificate",
+        url: 'https://yigitkoyuncu.com/cyberfirst-sertifikasi',
+        img: 'assets/images/media_1795112284164_89a9bd8e.jpg'
+      }
+    ];
+
+    const translations = {
+      tr: {
+        nav_about: 'Hakkımda',
+        nav_education: 'Eğitim',
+        nav_projects: 'Projeler',
+        nav_tools: 'Araçlar',
+        nav_certificates: 'Sertifikalar',
+        nav_contact: 'İletişim',
+        hero_title: 'Geliştirici & Maker | Lise Öğrencisi',
+        hero_bio: 'Eskişehir Sabiha Gökçen Mesleki ve Teknik Anadolu Lisesi Uçak Bakım Alanı öğrencisiyim. Havacılık, yazılım ve robotik alanlarında ürettiğim projelerle kendimi geliştiriyorum.',
+        btn_projects: 'Projelerimi İncele',
+        btn_contact: 'İletişime Geç',
+        card_header: 'GENEL BAKIŞ',
+        card_role_label: 'Aktif Görev',
+        card_role_val: 'SGMTAL Drone Takımı Yardımcı Pilot',
+        stat_certs: 'Sertifika',
+        stat_projects: 'Robotik Projesi',
+        edu_title: 'Eğitim Hayatım',
+        status_ongoing: 'Devam Ediyor',
+        status_graduated: 'Mezun',
+        step_current: '▲ Güncel Zirve',
+        step_3: '3. Aşama',
+        step_2: '2. Aşama',
+        step_1: '● Başlangıç',
+        sch_1: 'Eskişehir Sabiha Gökçen Mesleki ve Teknik Anadolu Lisesi',
+        dept_1: 'Uçak Bakım Alanı',
+        sch_2: 'Deneyap Teknoloji Atölyeleri',
+        dept_2: 'Teknoloji Eğitimi',
+        sch_3: 'Bolu Akşemseddin Hafız İmam Hatip Ortaokulu',
+        dept_3: 'Ortaokul',
+        sch_4: 'Bolu Gazipaşa İlkokulu',
+        dept_4: 'İlkokul',
+        proj_title: 'Projelerim',
+        p1: 'Mobil Kontrollü Sumo Robot',
+        p2: 'Çizgi İzleyen Robot',
+        p3: 'Engelden Kaçan Robot',
+        p4: 'Labirent Çözen Robot',
+        tools_title: 'Kullandığım Araçlar',
+        cat_soft: 'Yazılım & Web Dilleri',
+        cat_emb: 'Gömülü Sistemler & Donanım',
+        t_ard: 'Arduino & Mikrodenetleyiciler',
+        t_sens: 'Sensör Sistemleri',
+        t_mot: 'Motor & Sürücü Sistemleri',
+        t_circ: 'Elektronik Devre Kurulumu',
+        cat_mob: 'Mobil Uygulama & Blok Kodlama',
+        cat_des: 'Tasarım & Üretim',
+        t_cad: '3D Modelleme (CAD)',
+        t_cnc: 'CNC & Lazer Kesim',
+        t_proto: 'Fiziksel Prototipleme',
+        cat_sys: 'Sistem & Araçlar',
+        t_lin: 'Linux Terminali',
+        cert_title: 'Sertifikalarım',
+        tab_all: 'Tümü (23)',
+        tab_deneyap: 'Deneyap (12)',
+        tab_content: 'İçerik Üreticiliği (9)',
+        tab_participation: 'Katılım (2)',
+        btn_load_more: 'Daha Fazla Göster',
+        contact_title: 'İletişim',
+        footer_rights: 'Tüm hakları saklıdır.'
+      },
+      en: {
+        nav_about: 'About Me',
+        nav_education: 'Education',
+        nav_projects: 'Projects',
+        nav_tools: 'Tools',
+        nav_certificates: 'Certificates',
+        nav_contact: 'Contact',
+        hero_title: 'Developer & Maker | High School Student',
+        hero_bio: 'I am a student at Eskişehir Sabiha Gökçen Vocational and Technical Anatolian High School, Department of Aircraft Maintenance. I improve myself through projects I produce in aviation, software, and robotics.',
+        btn_projects: 'View Projects',
+        btn_contact: 'Get In Touch',
+        card_header: 'OVERVIEW',
+        card_role_label: 'Active Role',
+        card_role_val: 'SGMTAL Drone Team Co-Pilot',
+        stat_certs: 'Certificates',
+        stat_projects: 'Robotics Projects',
+        edu_title: 'Education',
+        status_ongoing: 'Ongoing',
+        status_graduated: 'Graduate',
+        step_current: '▲ Current Peak',
+        step_3: 'Stage 3',
+        step_2: 'Stage 2',
+        step_1: '● Origin / Start',
+        sch_1: 'Eskişehir Sabiha Gökçen Vocational and Technical Anatolian High School',
+        dept_1: 'Aircraft Maintenance Department',
+        sch_2: 'Deneyap Technology Workshops',
+        dept_2: 'Technology Training',
+        sch_3: 'Bolu Akşemseddin Hafiz Imam Hatip Secondary School',
+        dept_3: 'Secondary School',
+        sch_4: 'Bolu Gazipaşa Primary School',
+        dept_4: 'Primary School',
+        proj_title: 'Projects',
+        p1: 'Mobile-Controlled Sumo Robot',
+        p2: 'Line-Following Robot',
+        p3: 'Obstacle-Avoiding Robot',
+        p4: 'Maze-Solving Robot',
+        tools_title: 'Tools I Use',
+        cat_soft: 'Software & Web Languages',
+        cat_emb: 'Embedded Systems & Hardware',
+        t_ard: 'Arduino & Microcontrollers',
+        t_sens: 'Sensor Systems',
+        t_mot: 'Motor & Driver Systems',
+        t_circ: 'Electronic Circuit Setup',
+        cat_mob: 'Mobile App & Block Coding',
+        cat_des: 'Design & Production',
+        t_cad: '3D Modeling (CAD)',
+        t_cnc: 'CNC & Laser Cutting',
+        t_proto: 'Physical Prototyping',
+        cat_sys: 'Systems & Tools',
+        t_lin: 'Linux Terminal',
+        cert_title: 'Certificates',
+        tab_all: 'All (23)',
+        tab_deneyap: 'Deneyap (12)',
+        tab_content: 'Content Creation (9)',
+        tab_participation: 'Participation (2)',
+        btn_load_more: 'Show More',
+        contact_title: 'Contact',
+        footer_rights: 'All rights reserved.'
+      }
+    };
+
+    let activeLang = 'tr';
+    let currentFilter = 'all';
+    const ITEMS_PER_PAGE = 9;
+    let visibleCount = ITEMS_PER_PAGE;
+
+    function renderCertificates() {
+      const container = document.getElementById('certificates-container');
+      const loadMoreWrap = document.getElementById('cert-load-more-wrap');
+      container.innerHTML = '';
+
+      const filtered = certsData.filter(item => currentFilter === 'all' || item.cat === currentFilter);
+      const itemsToDisplay = filtered.slice(0, visibleCount);
+
+      itemsToDisplay.forEach(item => {
+        const title = activeLang === 'tr' ? item.titleTr : item.titleEn;
+
+        const card = document.createElement('div');
+        card.className = 'cert-card';
+        card.innerHTML = `
+          <!-- 16:10 Photo Area -->
+          <div class="cert-visual-16-10">
+            <img src="${item.img || ''}" 
+                 alt="${title}" 
+                 class="cert-img-placeholder" 
+                 loading="lazy">
+          </div>
+
+          <!-- Bottom: Directly Clickable Title -->
+          <div class="cert-title-bottom">
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="cert-link-title" title="${title}">
+              <span>${title}</span>
+              <i class="fa-solid fa-arrow-up-right-from-square cert-link-arrow"></i>
+            </a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      // Show or hide "Load More" button based on remaining count
+      if (filtered.length > visibleCount) {
+        loadMoreWrap.style.display = 'flex';
+      } else {
+        loadMoreWrap.style.display = 'none';
+      }
+    }
+
+    function loadMoreCertificates() {
+      visibleCount += ITEMS_PER_PAGE;
+      renderCertificates();
+    }
+
+    function filterCertificates(cat, btn) {
+      currentFilter = cat;
+      visibleCount = ITEMS_PER_PAGE; // Reset to initial 9 items on category change
+      document.querySelectorAll('.cert-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderCertificates();
+    }
+
+    function switchLanguage(lang) {
+      activeLang = lang;
+      document.documentElement.lang = lang;
+
+      document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerText = translations[lang][key];
+        }
+      });
+
+      renderCertificates();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCertificates();
+    });
+  </script>
+</body>
+
+</html>
